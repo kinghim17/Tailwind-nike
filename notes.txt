@@ -1,0 +1,101 @@
+1:
+These imports are a key difference in the new flat config format. Let me explain each import:
+
+import js from '@eslint/js'
+This is the core ESLint rules package
+In the old format, you used 'eslint:recommended' in extends
+Now you use js.configs.recommended.rules to get the same rules
+import globals from 'globals'
+This package provides predefined global variables
+In the old format, you used env: { browser: true }
+Now you use globals.browser to define browser globals
+import react from 'eslint-plugin-react'
+In the old format, you just listed 'plugin:react/recommended' in extends
+Now you import the plugin and use react.configs.recommended.rules
+import reactHooks from 'eslint-plugin-react-hooks'
+Similar to react plugin
+Old: 'plugin:react-hooks/recommended' in extends
+New: Import and use reactHooks.configs.recommended.rules
+import reactRefresh from 'eslint-plugin-react-refresh'
+For HMR (Hot Module Replacement) in React
+Old: Just listed in plugins array
+New: Imported and configured directly
+The main differences:
+
+Old format was more declarative (you just listed names)
+New format is more programmatic (you import and use the modules)
+New format gives you more direct control over the rules
+New format is more JavaScript-native
+This is part of ESLint's move towards a more modern, JavaScript-native configuration approach.
+
+2:
+3:
+4:
+5:
+6:
+7:
+8:
+9:
+10:
+<main class="p-5">
+  <h1 class="text-center text-lg text-blue-300">hello world</h1>
+  <div class="my-4 h-10 w-full rounded-md border-2 border-violet-500 bg-violet-300 p-2">
+    <p class="font-extrabold text-center font-mono">hellu</p>
+  </div>
+
+  <!-- Layout -->
+  <!--Aspect ratio, box sizing, float, position, overflow , z-index    -->
+  <div class="fixed top-0 h-10 w-10 bg-red-500"></div>
+  <div class="flex justify-between">
+    <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+    <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+    <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+  </div>
+  <div class="grid grid-cols-5 gap-2">
+    <div class="h-12 bg-violet-500"></div>
+    <div class="h-12 bg-violet-500"></div>
+    <div class="h-12 bg-violet-500"></div>
+    <div class="h-12 bg-violet-500"></div>
+    <div class="h-12 bg-violet-500"></div>
+  </div>
+  <div class="hidden md:block">
+    <p>I will appear for the device ressolution</p>
+  </div>
+  <div class="hidden max-md:block">
+    <p>I will appear for the device resolution</p>
+  </div>
+
+  <button class="my-2 rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 active:bg-blue-800">
+    Click Me
+    </button>
+
+<ul class="my-2 space-y-2">
+  <li class="bg-white p-2 first:bg-yellow-100">
+    Item1
+  </li>
+  <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">
+    Item2
+  </li>
+  <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">
+    Item3
+  </li>
+  <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">
+    Item4
+  </li>
+  <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">
+    Item5
+  </li>
+</ul>
+<!-- The dark mode is achived by check -->
+  <div class="m-10 rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5">
+    <h3 class="text-base font-medium tracking-tight text-slate-900 dark:text-white"> This is a text element</h3>
+    <p class="mt-2 text-sm text-slate-500 dark:text-blue"> This is even an longer p tag element</p>
+    <button id="toggleDark" class="text-blue-900 px-4 py-2 text-sa font-medium mt-8 bg-blue-100 rounded-md" onclick>
+      Toggle Dark mode
+    </button>
+  </div>
+
+<p class="text-2xl text-[#973F29] bg-stone-100 p-[16px]">Chestnut COLOR</p>
+
+</main>
+
